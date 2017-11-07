@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friends</title>
+</head>
+<body>
+    <h1>Friends:</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Friend Since</th>
+            <th></th>
+        </tr>
+        {% for friend in friends %}
+        <tr>
+            <td>{{friend.name}}</td>
+            <td>{{friend.age}}</td>
+            <td>{{friend.friend_since}}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    <h1>Add a Friend:</h1>
+    <form action="/add_friend" method="POST">
+        Name: <input type="text" name="n">
+        Age: <input type="number" name="a">
+        Friend Since: <input type="date" name="f">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
